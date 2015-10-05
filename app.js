@@ -6,6 +6,7 @@ var morgan = require('morgan');
 var port = process.env.PORT || 3000;
 
 
+
 app.set('view engine', 'ejs') // makes the express app (app variable) look for your view folders
 app.set('views', './public/views')
 
@@ -23,10 +24,11 @@ app.use(bodyParser.json());
 
 
 //ROOT ROUTE
-app.get('/', function(req, res){
-  res.render('index');
-});
-
+// app.get('/', function(req, res){
+//   res.render('index');
+// });
+var routes = require('./config/routes');
+app.use(routes);
 
 
 
