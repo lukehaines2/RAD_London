@@ -13,8 +13,6 @@ router.route('/')
 
 router.route('/places')
   .get(placesController.getPlaces)
-
-
-
+  .post(placesController.postPlaces);
 
 module.exports = router
