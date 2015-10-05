@@ -66,3 +66,8 @@ function initAutocomplete() {
   });
   // [END region_getplaces]
 }
+
+
+// //this is how you get the value from the search box, works in chrome console, not in from this file
+//   var searchInput = $('#pac-input').val()
+//   console.log(searchInput, 'Search Input');
