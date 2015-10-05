@@ -12,6 +12,7 @@ var User = require('./models/user');
 
 mongoose.connect('mongodb://localhost:27017/rad-london')
 
+
 app.set('view engine', 'ejs') // makes the express app (app variable) look for your view folders
 app.set('views', './public/views')
 
@@ -27,9 +28,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //ROOT ROUTE
-app.get('/', function(req, res){
-  res.render('index');
-});
+
+// app.get('/', function(req, res){
+//   res.render('index');
+// });
+
+// app.get('/', function(req, res){
+//   res.render('index');
+// });
+var routes = require('./config/routes');
+app.use(routes);
+
 
 //LISTEN ON PORT 3000
 app.listen(port, function(){
