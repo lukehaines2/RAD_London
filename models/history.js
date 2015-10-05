@@ -6,4 +6,4 @@ var historySchema = new mongoose.Schema({
   content: String
 })
 
-module.exports = mongoose.model('History', historySchema);
+module.exports = mongoose.model('HistoryModel', historySchema);
