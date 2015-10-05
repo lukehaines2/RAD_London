@@ -39,6 +39,9 @@ app.use(bodyParser.json());
 var routes = require('./config/routes');
 app.use(routes);
 
+// var placeRouter = require('./controllers/places');
+// app.use('/places', placeRouter);
+
 
 //LISTEN ON PORT 3000
 app.listen(port, function(){
@@ -60,9 +63,9 @@ var places = new Place({
 })
 
 places.historyModels.push({
-  name: 'Suffrattes smash up brick lane',
-  image: 'IAMAN IMAGE',
-  content: 'bkdsahbfhdskulhfkluhadskuhf'
+  name: 'Suffragettes smash up brick lane',
+  image: 'http://media.tumblr.com/tumblr_maa9xum6q81rt6v32.jpg',
+  content: 'members of women\'s organisation (right to vote) movements in the late 19th and early 20th century, particularly militants in Great Britain such as members of the Women\'s Social and Political Union (WSPU). Suffragist is a more general term for members of suffrage movement.'
 });
 
 places.save(function(err, history){
