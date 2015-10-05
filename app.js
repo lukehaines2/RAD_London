@@ -6,6 +6,9 @@ var morgan        = require('morgan');
 var port          = process.env.PORT || 3000;
 
 // DATABASE SETUP
+var Place = require('./models/place');
+var User = require('./models/user');
+var History = require('./models/history');
 mongoose.connect('mongodb://localhost:27017/rad-london')
 
 app.set('view engine', 'ejs') // makes the express app (app variable) look for your view folders
@@ -22,18 +25,41 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
-
 //ROOT ROUTE
 app.get('/', function(req, res){
   res.render('index');
 });
 
-app.get('/place', function(req, res) {
-  res.json()
-})
+//CREATE
+app.post('/', function(req, res) {
+  var place = new Place(req.body);
 
+  place.save(function(err) {
+    if(err) res.json({message: 'None' + err})
+    // console.log(place)
+    res.json(place)
+  });
+});
 
+app.post('/users', function(req, res) {
+  var user = new User(req.body);
+
+  user.save(function(err) {
+    if(err) res.json({message: 'None' + err})
+    // console.log(place)
+    res.json(user)
+  });
+});
+
+app.post('/history', function(req, res) {
+  var history = new History(req.body);
+
+  history.save(function(err) {
+    if(err) res.json({message: 'None' + err})
+    // console.log(place)
+    res.json(history)
+  });
+});
 
 
 //LISTEN ON PORT 3000
