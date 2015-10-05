@@ -5,8 +5,9 @@
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 51.50949, lng: -0.102654},
-    zoom: 12,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    zoom: 14,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    styles: styledArray
   });
 
   // Create the search box and link it to the UI element.
@@ -47,6 +48,7 @@ function initAutocomplete() {
         scaledSize: new google.maps.Size(25, 25)
       };
 
+
       // Create a marker for each place.
       markers.push(new google.maps.Marker({
         map: map,
@@ -54,6 +56,8 @@ function initAutocomplete() {
         title: place.name,
         position: place.geometry.location
       }));
+
+
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -66,3 +70,38 @@ function initAutocomplete() {
   });
   // [END region_getplaces]
 }
+
+
+
+var styledArray = [
+    {
+        "stylers": [
+            {
+                "hue": "#ff1a00"
+            },
+            {
+                "invert_lightness": true
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 33
+            },
+            {
+                "gamma": 0.5
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2D333C"
+            }
+        ]
+    }
+]
+
+
