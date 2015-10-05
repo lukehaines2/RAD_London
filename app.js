@@ -1,10 +1,12 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var morgan = require('morgan');
-var port = process.env.PORT || 3000;
+var express       = require('express');
+var app           = express();
+var mongoose      = require('mongoose');
+var bodyParser    = require('body-parser');
+var morgan        = require('morgan');
+var port          = process.env.PORT || 3000;
 
+// DATABASE SETUP
+mongoose.connect('mongodb://localhost:27017/rad-london')
 
 app.set('view engine', 'ejs') // makes the express app (app variable) look for your view folders
 app.set('views', './public/views')
@@ -26,6 +28,10 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
   res.render('index');
 });
+
+app.get('/place', function(req, res) {
+  res.json()
+})
 
 
 
