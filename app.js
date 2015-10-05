@@ -28,14 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //ROOT ROUTE
-
-// app.get('/', function(req, res){
-//   res.render('index');
-// });
-
-// app.get('/', function(req, res){
-//   res.render('index');
-// });
 var routes = require('./config/routes');
 app.use(routes);
 
