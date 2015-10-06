@@ -19,9 +19,7 @@ function home(req, res){
 function getPlaces(req, res){
   Place.find({}, function(err, places){
     if(err) console.log(err)
-    // res.json(places)
     res.render('places.ejs', { places: places });
-        
 
   });
 };

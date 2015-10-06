@@ -25,16 +25,19 @@
 
   <p>insert map and search results on this page</p>
   
-  <ul>
-    <% for(var i = 0; i < places.length; i ++) { %>
-    <li><%= places[i].name %></li>
-    <% } %>
-  </ul>
+  
 
   <div id="map"></div>
 
   <div class="information" id="info-box">
     <h2 class="title"></h2>
+    <ul>
+    <% for(var i = 0; i < places.length; i ++) { %>
+      <li><%= places[i].name %></li>
+      <li><%= places[i].historyModels[0].content %></li>
+      <image src="../images/" + "<%= places[i].historyModels[0].image %>">
+    <% } %>
+  </ul>
   </div>
   
   <p> bottom of page</p>  
