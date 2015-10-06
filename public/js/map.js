@@ -41,7 +41,7 @@ function closeBar() {
     $('#close-bar').on('click', function() {
         $('#info-box').animate({width: 'toggle'})
         $('.title').empty();
-    })
+    });
 }
 
 
