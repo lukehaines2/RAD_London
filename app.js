@@ -10,8 +10,14 @@ var HistoryModel = require('./models/history');
 var Place = require('./models/place');
 var User = require('./models/user');
 
+// MONGOOSE CONNECT
 mongoose.connect('mongodb://localhost:27017/rad-london')
 
+
+// FAVICON
+var favicon = require('serve-favicon');
+
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 app.set('view engine', 'ejs') // makes the express app (app variable) look for your view folders
 app.set('views', './public/views')
