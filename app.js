@@ -5,9 +5,11 @@ var bodyParser    = require('body-parser');
 var morgan        = require('morgan');
 var port          = process.env.PORT || 3000;
 
+mongoose.connect('mongodb://localhost:27017/rad-london')
 
 var routes = require('./config/routes');
 app.use(routes);
+
 
 
 // FAVICON
