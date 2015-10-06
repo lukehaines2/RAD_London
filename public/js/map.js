@@ -15,6 +15,8 @@ var locations = [
     ['Bow Road Police Station', 51.533791, -0.024848]
 ];
 
+
+
 function setMarkers(map) {
   for (var i = 0; i < locations.length; i++) {
     var location = locations[i];
@@ -27,6 +29,11 @@ function setMarkers(map) {
     marker.addListener('click', function() {
         var placeName = $(this)
         $('#info-box').animate({width: 'toggle'})
+            var data = $('#place-name').attr('data-attribute');
+            $('#place-name').append(data)
+            var dataContent = $('#place-content').attr('data-attribute');
+            $('#place-content').append(dataContent)
+            
             var title = placeName[0].title
             $('.title').append(title);
     });
