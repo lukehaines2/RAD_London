@@ -22,24 +22,16 @@ function setMarkers(map) {
       position: {lat: location[1], lng: location[2]},
       map: map,
       title: location[0]
-      // zIndex: location[3]
     });
+
     marker.addListener('click', function() {
-        console.log($(this))
-        // var place = $(this)
+        var placeName = $(this)
         $('#info-box').animate({width: 'toggle'})
-        // $('#info-box').slideToggle('slow', function() {
-        //     console.log("nfoiwbf")
-        //     $(this).css("display", "inline-block")
-        // })  
+            var title = placeName[0].title
+            $('.title').append(title);
     })
   }
 }
-
-// function slideOut(place) {
-//     $('#info-box').slideToggle('slow', function() {
-//     })
-// }
 
 
 var styledArray = [
