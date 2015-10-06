@@ -10,7 +10,6 @@ var placesController = require('../controllers/places')
 router.route('/')
   .get(placesController.home);
 
-
 router.route('/places')
   .get(placesController.getPlaces)
   .post(placesController.postPlaces);
