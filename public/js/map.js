@@ -25,26 +25,21 @@ function setMarkers(map) {
       // zIndex: location[3]
     });
     marker.addListener('click', function() {
-      
-    });
+        console.log($(this))
+        // var place = $(this)
+        $('#info-box').animate({width: 'toggle'})
+        // $('#info-box').slideToggle('slow', function() {
+        //     console.log("nfoiwbf")
+        //     $(this).css("display", "inline-block")
+        // })  
+    })
   }
 }
 
-// function infoClick(marker, locations) {
-
-// };
-
-
-
-
-
-
-
-
-
-
-
-
+// function slideOut(place) {
+//     $('#info-box').slideToggle('slow', function() {
+//     })
+// }
 
 
 var styledArray = [
