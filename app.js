@@ -50,11 +50,6 @@ app.listen(port, function(){
 
 
 /////seeds
-// var suffragettes = new HistoryModel({
-//   name: 'Suffrattes smash up brick lane',
-//   image: 'IAMAN IMAGE',
-//   content: 'bkdsahbfhdskulhfkluhadskuhf'
-// });
 
 var place1 = new Place({
   name: 'Bow Rd Police Station ',
@@ -146,4 +141,22 @@ place5.historyModels.push({
 place5.save(function(err, history){
   if(err) console.log(err)
   console.log('place5 saved', place5.name)
+});
+
+
+var place6 = new Place({
+  name: 'Bryant and May match factory(now the Bow Quarter)',
+  longitude:51.53108,
+  latitude: -0.021737
+});
+
+place6.historyModels.push({
+  name: 'London matchgirls strike of 1888',
+  image: './public/matchgirls.jpg',
+  content: "The London matchgirls’ strike of 1888 was a strike of the women and teenage girls working at the Bryant and May Factory in Bow, London. In April 2012, the Ministry of Defence identified the water tower as a potential location for surface-to-air missile defences during the 2012 Summer Olympics.[9] Many residents felt that they had not been adequately consulted on the proposal"
+});
+
+place6.save(function(err, history){
+  if(err) console.log(err)
+  console.log('place6 saved', place6.name)
 });
