@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>The Places Page</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
-</head>
-<body>
-  <header>
-    <div class="nav">
-      <ul>
-        <li class="Home"><a href="http://localhost:3000/">Home</a></li>
-        <li class="About"><a href="http://localhost:3000/places">Places</a></li>
-      </ul>
-    </div>
-  </header>
+
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<header>
+  <div class="logo">
+    <h1 id="logo">RAD.LONDON</h1>
+  </div>
+  <div class="navigation-links">
+    <ul id="nav-links">
+      <li class="home"><a href="http://localhost:3000/">Home</a></li>
+      <li class="places"><a href="http://localhost:3000/places">Places</a></li>
+    </ul>
+  </div>
+</header>
 
   <h3>YOUR RESULTS</h3>
 
@@ -26,8 +22,7 @@
     <div class="metro three-d" id="click-me"></div>
   </div>
   </div>
-
-
+  
   <p> bottom of page</p>  
   <script src="/js/map.js"></script>
 </body>
