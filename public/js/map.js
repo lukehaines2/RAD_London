@@ -29,7 +29,7 @@ function setMarkers(map) {
         $('#info-box').animate({width: 'toggle'})
             var title = placeName[0].title
             $('.title').append(title);
-    })
+    });
   }
 }
 
