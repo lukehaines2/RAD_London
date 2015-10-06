@@ -33,8 +33,10 @@
     <h2 class="title"></h2>
     <ul>
     <% for(var i = 0; i < places.length; i ++) { %>
-      <li><%= places[i].name %></li>
-      <li><%= places[i].historyModels[0].content %></li>
+      <li id="place-name" data-attribute="<%= places[i].name %>"></li>
+      <li id="place-content" data-attribute="<%= places[i].historyModels[0].content %>"></li>
+
+
       <image src="../images/" + "<%= places[i].historyModels[0].image %>">
     <% } %>
   </ul>
