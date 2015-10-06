@@ -132,4 +132,6 @@ a {
   position: absolute;
   right: 0;
   top: 50px;
+  background-color: black;
+  color: white;
 }
