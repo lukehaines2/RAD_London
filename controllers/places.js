@@ -17,12 +17,13 @@ function home(req, res){
 
 //GET /places
 function getPlaces(req, res){
-  console.log('getPlaces')
   Place.find({}, function(err, places){
     if(err) console.log(err)
-    res.json(places)
-    
-  })
+    // res.json(places)
+    res.render('places.ejs', { places: places });
+        
+
+  });
 };
 
 //POST /places

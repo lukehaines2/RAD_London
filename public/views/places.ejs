@@ -24,8 +24,12 @@
   <h3>YOUR RESULTS</h3>
 
   <p>insert map and search results on this page</p>
- 
-
+  
+  <ul>
+    <% for(var i = 0; i < places.length; i ++) { %>
+    <li><%= places[i].name %></li>
+    <% } %>
+  </ul>
 
   <div id="map"></div>
 
