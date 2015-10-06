@@ -29,8 +29,19 @@ function setMarkers(map) {
         $('#info-box').animate({width: 'toggle'})
             var title = placeName[0].title
             $('.title').append(title);
+            closeBar();
     })
   }
+}
+
+//function called when info-box has been toggled above
+//close-bar links to the p class of x included in the place.ejs, with event listener animating toggle function to 0 
+//with that event listener closes the box
+function closeBar() {
+    $('#close-bar').on('click', function() {
+        $('#info-box').animate({width: 'toggle'})
+        $('.title').empty();
+    })
 }
 
 
