@@ -5,11 +5,15 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(to right, red, orange);
+
 }
 
 
 header {
-  background-color: #444;
+  /*background-image: linear-gradient(red, orange);*/
+/*  background-color: #444;*/
+/*background-image: radial-gradient(ellipse farthest-corner at 470px 47px , #FFFF80 20%, rgba(204, 153, 153, 0.4) 30%, #E6E6FF 60%);*/
   width: 100%;
   /*height: 15%;*/
 }
@@ -137,5 +141,6 @@ a {
 }
 
 li{
+   list-style-type: none;
   color: white;
 }

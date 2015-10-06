@@ -32,14 +32,15 @@ function setMarkers(map) {
             var data = $('#place-name').attr('data-attribute');
             $('#place-name').append(data)
             var dataContent = $('#place-content').attr('data-attribute');
-            $('#place-content').append(dataContent)
-            
+            $('#place-content').append(dataContent);
+
+            var image = $('#image').attr('data-attribute');
+            $('#image').append("<img src='" + image + "'/>");
             var title = placeName[0].title
             $('.title').append(title);
     });
   }
 }
-
 
 var styledArray = [
     {
