@@ -1,10 +1,8 @@
 var mongoose = require('mongoose');
-
-// DATABASE SETUP
 var HistoryModel = require('../models/history');
 var Place = require('../models/place');
 var User = require('../models/user');
-// MONGOOSE CONNECT
+
 mongoose.connect('mongodb://localhost:27017/rad-london')
 
 
