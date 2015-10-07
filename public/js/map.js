@@ -19,11 +19,14 @@ function setMarkers(map) {
     var lat = parseFloat($(place).find('.lat')[0].innerHTML);
     var lng = parseFloat($(place).find('.long')[0].innerHTML);
     var content = $(place).find('.place-content')[0].innerHTML;
+    var image = $(place).find('.image')[0].innerHTML;
 //sorry about this but lat is actually long in seed data and visa versa :)
     marker = new google.maps.Marker({
       position: {lat: lng, lng: lat},
       map: map,
-      title: name
+      title: name,
+      content: content,
+      image: image
     });
     markerClick();
   };
@@ -35,18 +38,15 @@ function markerClick() {
     var placeName = $(this)
     console.log($(this))
     $('#info-box').animate({width: 'toggle'})
+      console.log(placeName)
       console.log('INFOOO')
-        // var data = $('#place-name').attr('data-attribute');
-        // $('#place-name').append(data)
-        // var dataContent = $('#place-content').attr('data-attribute');
-        // $('#place-content').append(dataContent);
+      // debugger;
+      $('.title').append(placeName[0].title);
+      $('.place-information').append(placeName[0].content);
+      $('#image-tag').attr('src', placeName[0].image)
 
-        // var image = $('#image').attr('data-attribute');
-        // $('#image').append("<img src='" + image + "'/>");
-        // var title = placeName[0].title
-        // $('.title').append(title);
-        // closeBar();
-})
+    closeBar();
+  })
 }
 
 //function called when info-box has been toggled above
@@ -54,13 +54,11 @@ function markerClick() {
 //with that event listener closes the box
 function closeBar() {
     $('#close-bar').one('click', function() {
-        debugger;
         $('#info-box').animate({width: 'toggle'})
-         console.log("Animation complete!")
+         // console.log("Animation complete!")
          $('.title').empty();
-         $('#image').empty();
-         $('#place-name').empty();
-         $('#place-content').empty();
+         $('.place-information').empty();
+         $('#image-tag').empty();
         })
     };
 

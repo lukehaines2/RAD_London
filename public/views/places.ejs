@@ -24,12 +24,16 @@
   <div id="map"></div>
 
 <div class="information" id="info-box">
+    <p id="close-bar">X</p>
     <h2 class="title"></h2>
-
+    <p class="place-information"></p>
+    <div class="image"><img id="image-tag" src=""></div>
     <div id="close-side">
-      <p id="close-bar">X</p>
     </div>
+</div>
 
+<!-- This is hidden as we are just using it to pass db to map -->
+<div id="functionality">
   <% for(var i = 0; i < places.length; i ++) { %>
     <div class="place-container">
       <p class="image"><%= places[i].historyModels[0].image %></p>
@@ -38,8 +42,8 @@
       <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>   
     </div>
   <% } %>
-  
 </div>
+
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
 <script src="/js/map.js"></script>
