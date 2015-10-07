@@ -35,17 +35,23 @@ function setMarkers(map) {
 
 function markerClick() {
   marker.addListener('click', function() {
+    console.log(marker);
     var placeName = $(this)
-    console.log($(this))
+    // console.log($(this))
     $('#info-box').animate({width: 'toggle'})
-      console.log(placeName)
-      console.log('INFOOO')
-      // debugger;
-      $('.title').append(placeName[0].title);
-      $('.place-information').append(placeName[0].content);
-      $('#image-tag').attr('src', placeName[0].image)
-
-    closeBar();
+        // console.log(placeName)
+        // console.log('INFOOO')
+        // debugger;
+    if($('.title').is(':empty')){
+        $('.title').append(placeName[0].title);
+        $('.place-information').append(placeName[0].content);
+        $('#image-tag').attr('src', placeName[0].image)
+      closeBar();
+    } else {
+       $('.title').empty();
+       $('.place-information').empty();
+       $('#image-tag').empty();
+    }
   })
 }
 
@@ -60,8 +66,25 @@ function closeBar() {
          $('.place-information').empty();
          $('#image-tag').empty();
         })
+
     };
 
+// function markerClose() {
+//     marker.addListenerOnce('click', function() {
+//        markerCloseBar();
+//        console.log('hihih')
+//    })
+// }
+
+// function markerCloseBar() {
+//    debugger;
+//    $('#info-box').animate({width: 'toggle'});
+//        console.log("Animation complete!")
+//        $('.title').empty();
+//        $('#image').empty();
+//        $('#place-name').empty();
+//        $('#place-content').empty();
+// }
 
 
 var styledArray = [
