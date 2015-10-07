@@ -30,61 +30,53 @@ function setMarkers(map) {
     });
     markerClick();
   };
+  likeClick();
 };
 
 
 function markerClick() {
   marker.addListener('click', function() {
-    console.log(marker);
     var placeName = $(this)
-    // console.log($(this))
     $('#info-box').animate({width: 'toggle'})
-        // console.log(placeName)
-        // console.log('INFOOO')
-        // debugger;
-    if($('.title').is(':empty')){
-        $('#image-tag').attr('src', placeName[0].image)
-        $('.title').append(placeName[0].title);
-        $('.place-information').append(placeName[0].content);
-      closeBar();
-    } else {
-       $('.title').empty();
-       $('.place-information').empty();
-       $('#image-tag').empty();
-    }
-  })
-}
-
-//function called when info-box has been toggled above
-//close-bar links to the p class of x included in the place.ejs, with event listener animating toggle function to 0 
-//with that event listener closes the box
-function closeBar() {
-    $('#close-bar').one('click', function() {
-        $('#info-box').animate({width: 'toggle'})
-         // console.log("Animation complete!")
+      if($('.title').is(':empty')){
+          $('#image-tag').attr('src', placeName[0].image)
+          $('.title').append(placeName[0].title);
+          $('.place-information').append(placeName[0].content);
+        closeBar();
+      } else {
          $('.title').empty();
          $('.place-information').empty();
          $('#image-tag').empty();
-        })
+         $('#like').empty()
+         count = 0;
+      };
+  });
+};
 
-    };
+function closeBar() {
+  $('#close-bar').one('click', function() {
+      $('#info-box').animate({width: 'toggle'})
+       // console.log("Animation complete!")
+       $('.title').empty();
+       $('.place-information').empty();
+       $('#image-tag').empty();
+       $('#like').empty();
+  });
+};
 
-// function markerClose() {
-//     marker.addListenerOnce('click', function() {
-//        markerCloseBar();
-//        console.log('hihih')
-//    })
-// }
+var count = 0;
 
-// function markerCloseBar() {
-//    debugger;
-//    $('#info-box').animate({width: 'toggle'});
-//        console.log("Animation complete!")
-//        $('.title').empty();
-//        $('#image').empty();
-//        $('#place-name').empty();
-//        $('#place-content').empty();
-// }
+function likeClick() {
+  $('#like').on('click', function(){
+    console.log("IS THIS WORKING?????")
+    // $.post("/places", function(data){
+    //   count ++
+    //   console.log(count);
+    //   $('#like').append("<i id='like' class='fa fa-thumbs-o-up'></i>");
+    // })
+  })
+}
+
 
 
 var styledArray = [
