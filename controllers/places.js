@@ -15,7 +15,11 @@ function home(req, res){
 
 //GET /places
 function getPlaces(req, res){
-  res.render('places.ejs');
+  Place.find({}, function(err, places){
+    if(err) console.log(err)
+    res.render('places.ejs', { places: places });
+
+  });
 };
 
 

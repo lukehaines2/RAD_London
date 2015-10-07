@@ -1,6 +1,6 @@
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 51.533791, lng: -0.024848},
+    center: {lat: 51.533746, lng: -0.024878},
     zoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: styledArray
@@ -15,6 +15,8 @@ var locations = [
     ['Bow Road Police Station', 51.533791, -0.024848]
 ];
 
+
+
 function setMarkers(map) {
   for (var i = 0; i < locations.length; i++) {
     var location = locations[i];
@@ -27,6 +29,13 @@ function setMarkers(map) {
     marker.addListener('click', function() {
         var placeName = $(this)
         $('#info-box').animate({width: 'toggle'})
+            var data = $('#place-name').attr('data-attribute');
+            $('#place-name').append(data)
+            var dataContent = $('#place-content').attr('data-attribute');
+            $('#place-content').append(dataContent);
+
+            var image = $('#image').attr('data-attribute');
+            $('#image').append("<img src='" + image + "'/>");
             var title = placeName[0].title
             $('.title').append(title);
             closeBar();
@@ -45,6 +54,10 @@ function closeBar() {
         })
     };
 
+
+//     });
+//   }
+// }
 
 var styledArray = [
     {
