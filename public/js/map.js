@@ -51,6 +51,9 @@ function closeBar() {
         $('#info-box').animate({width: 'toggle'})
          console.log("Animation complete!")
          $('.title').empty();
+         $('#place-name').empty();
+         $('#image').empty();
+         $('#place-content').empty();
         })
     };
 
