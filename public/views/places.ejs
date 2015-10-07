@@ -9,39 +9,36 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <h1 id="logo">RAD.LONDON</h1>
-  </div>
-  <div class="navigation-links">
-    <ul id="nav-links">
-      <li class="home"><a href="/">Home</a></li>
-      <li class="places"><a href="/places">Places</a></li>
-    </ul>
-  </div>
-</header>
-
+  <header>
+    <div class="logo">
+      <h1 id="logo">RAD.LONDON</h1>
+    </div>
+    <div class="navigation-links">
+      <ul id="nav-links">
+        <li class="home"><a href="/">Home</a></li>
+        <li class="places"><a href="/places">Places</a></li>
+      </ul>
+    </div>
+  </header>
+  <br>
+  <br>
   <div id="map"></div>
 
   <div class="information" id="info-box">
     <h2 class="title"></h2>
-<<<<<<< HEAD
-    <div id="close-side">
-      <p id="close-bar">X</p>
-    </div>
-=======
+  <div id="close-side">
+    <p id="close-bar">X</p>
+  </div>
     <ul>
     <% for(var i = 0; i < places.length; i ++) { %>
-      <!-- <image src="../images/" + "<%= places[i].historyModels[0].image %>"> -->
       <li id="image" data-attribute="<%= places[i].historyModels[0].image %>"></li>
       <li id="place-name" data-attribute="<%= places[i].name %>"></li>
       <li id="place-content" data-attribute="<%= places[i].historyModels[0].content %>"></li>      
     <% } %>
-  </ul>
->>>>>>> 996f8034f5239286dad4e67757899b8fdae2c926
+    </ul>
   </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
-<script src="/js/map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
+  <script src="/js/map.js"></script>
 </body>
 </html>

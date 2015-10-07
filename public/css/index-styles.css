@@ -4,6 +4,7 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: no-repeat;
   font-family: 'Oswald', sans-serif;
   color: black;
   height: 100%;

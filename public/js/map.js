@@ -15,8 +15,6 @@ var locations = [
     ['Bow Road Police Station', 51.533791, -0.024848]
 ];
 
-
-
 function setMarkers(map) {
   for (var i = 0; i < locations.length; i++) {
     var location = locations[i];
@@ -55,10 +53,6 @@ function closeBar() {
     };
 
 
-//     });
-//   }
-// }
-
 var styledArray = [
     {
         "stylers": [
@@ -89,5 +83,4 @@ var styledArray = [
         ]
     }
 ]
-
 
