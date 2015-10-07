@@ -12,7 +12,9 @@ var locations = [
     ['Battle of Cable Street', 51.519184, -0.058872], 
     ['Suffragettes in the EastEnd', 51.5144, 0.0586], 
     ['The Blind Beggar', 51.519184, -0.058872], 
-    ['Bow Road Police Station', 51.533791, -0.024848]
+    ['Bow Road Police Station', 51.533791, -0.024848],
+    ['Spitalfields Market', 51.5166, 0.0750],
+    ['Bryant and May match factory(now the Bow Quarter)', 51.53108, -0.021737]
 ];
 
 

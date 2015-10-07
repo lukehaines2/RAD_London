@@ -1,17 +1,60 @@
-var express = require('express');
-var router = express.Router();
-//PARSES INFO FROM POST
-var bodyParser = require('body-parser');
-//USED TO MANIPULATE POST METHODS
-var methodOverride = require('method-override');
-var placesController = require('../controllers/places')
+var express           = require('express');
+var router            = express.Router();
+var bodyParser        = require('body-parser');
+var methodOverride    = require('method-override');
+var mongoose          = require('mongoose');
+var Histories         = require('../models/history');
+var Place             = require('../models/place');
+var User              = require('../models/user');
 
 
-router.route('/')
-  .get(placesController.home);
 
-router.route('/places')
-  .get(placesController.getPlaces)
-  .post(placesController.postPlaces);
+//TWITTER ROUTES
+module.exports = function(app, passport) {
 
-module.exports = router
+  app.get('/', function(req, res) {
+    res.render('index.ejs')
+  });
+
+  app.get('/places', function(req, res) {
+    Place.find({}, function(err, places){
+      if(err) console.log(err)
+      res.render('places.ejs', { places: places } );
+    });
+  });
+
+
+  // route for showing the profile page
+    app.get('/profile', isLoggedIn, function(req, res) {
+        res.redirect('/places')
+        // res.render('/places', {
+        //     user : req.user // get the user out of session and pass to template
+        // });
+    });
+
+        // route for logging out
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
+  app.get('/auth/twitter', passport.authenticate('twitter'));
+
+  app.get('/auth/twitter/callback', 
+    passport.authenticate('twitter', {
+      successRedirect: '/places',
+      failureRedirect: '/'
+    })
+  )
+
+  app.get('/profile', function(req, res) {
+    res.send("it's working")
+  });
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+      return next();
+
+    res.redirect('/')
+  }
+}
