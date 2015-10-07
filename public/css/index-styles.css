@@ -1,9 +1,10 @@
 html, body {
-  background-image: url("http://caretolook.com/wp-content/uploads/2015/02/shoreditch-3.jpg");
+  background-image: url("http://wanago.co.uk/images/uploads/locations/jacktheripper.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: no-repeat;
   font-family: 'Oswald', sans-serif;
   color: black;
   height: 100%;
@@ -29,7 +30,7 @@ html, body {
   margin: 0 auto;
   text-align: center;
   position: relative;
-  top: 6%;
+  top: 4%;
   padding: 0;
 }
 
@@ -88,4 +89,12 @@ li :hover {
 
 a {
   text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  font-color: black;
+  position: relative;
+  top: 6%;
 }
