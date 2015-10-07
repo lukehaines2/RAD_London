@@ -8,7 +8,7 @@ var User = require('../models/user');
 
 //GET //
 function home(req, res){
-  res.render('index.ejs');
+  res.render('index.ejs')
   // res.json
 };
 

@@ -15,16 +15,23 @@ var locations = [
     ['Bow Road Police Station', 51.533791, -0.024848]
 ];
 
+
+var marker; 
+
 function setMarkers(map) {
   for (var i = 0; i < locations.length; i++) {
     var location = locations[i];
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
       position: {lat: location[1], lng: location[2]},
       map: map,
       title: location[0]
     });
+    markerClick();
+  }
+}
 
-    marker.addListener('click', function() {
+function markerClick() {
+marker.addListener('click', function() {
         var placeName = $(this)
         $('#info-box').animate({width: 'toggle'})
             var data = $('#place-name').attr('data-attribute');
@@ -38,17 +45,20 @@ function setMarkers(map) {
             $('.title').append(title);
             closeBar();
     })
-  }
 }
 
 //function called when info-box has been toggled above
 //close-bar links to the p class of x included in the place.ejs, with event listener animating toggle function to 0 
 //with that event listener closes the box
 function closeBar() {
-    $('#close-bar').on('click', function() {
+    $('#close-bar').one('click', function() {
+        debugger;
         $('#info-box').animate({width: 'toggle'})
          console.log("Animation complete!")
          $('.title').empty();
+         $('#image').empty();
+         $('#place-name').empty();
+         $('#place-content').empty();
         })
     };
 
