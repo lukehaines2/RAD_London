@@ -29,7 +29,7 @@ html, body {
   margin: 0 auto;
   text-align: center;
   position: relative;
-  top: 6%;
+  top: 4%;
   padding: 0;
 }
 
@@ -88,4 +88,11 @@ li :hover {
 
 a {
   text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  position: relative;
+  top: 6%;
 }
