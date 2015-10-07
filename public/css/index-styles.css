@@ -93,6 +93,7 @@ a {
 footer {
   text-align: center;
   color: white;
+  font-color: black;
   position: relative;
   top: 6%;
 }
