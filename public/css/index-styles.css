@@ -1,5 +1,4 @@
 html, body {
-  /*background-image: url("http://caretolook.com/wp-content/uploads/2015/02/shoreditch-3.jpg");*/
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -31,7 +30,7 @@ html, body {
   margin: 0 auto;
   text-align: center;
   position: relative;
-  top: 4%;
+  top: 3%;
   padding: 0;
 }
 
@@ -53,8 +52,8 @@ header {
 }
 
 .navigation-links {
-  width: 20%;
-  margin-top: 10px;
+  width: 25%;
+  margin-top: 15px;
   display: inline-block;
   float: right;
   color: white;

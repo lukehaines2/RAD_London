@@ -24,11 +24,25 @@ module.exports = function(app, passport) {
   });
 
 
+  // route for showing the profile page
+    app.get('/profile', isLoggedIn, function(req, res) {
+        res.redirect('/places')
+        // res.render('/places', {
+        //     user : req.user // get the user out of session and pass to template
+        // });
+    });
+
+        // route for logging out
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
   app.get('/auth/twitter', passport.authenticate('twitter'));
 
   app.get('/auth/twitter/callback', 
     passport.authenticate('twitter', {
-      successRedirect: '/profile',
+      successRedirect: '/places',
       failureRedirect: '/'
     })
   )
@@ -44,5 +58,3 @@ module.exports = function(app, passport) {
     res.redirect('/')
   }
 }
-
-
