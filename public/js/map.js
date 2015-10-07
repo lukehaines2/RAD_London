@@ -43,9 +43,9 @@ function markerClick() {
         // console.log('INFOOO')
         // debugger;
     if($('.title').is(':empty')){
+        $('#image-tag').attr('src', placeName[0].image)
         $('.title').append(placeName[0].title);
         $('.place-information').append(placeName[0].content);
-        $('#image-tag').attr('src', placeName[0].image)
       closeBar();
     } else {
        $('.title').empty();

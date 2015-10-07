@@ -149,3 +149,7 @@ li{
 #functionality {
   display: none;
 }
+#close-bar:hover{
+  background-color: pink;
+  display: inline-block;
+}
