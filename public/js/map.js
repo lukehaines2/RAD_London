@@ -25,9 +25,44 @@ function setMarkers(map) {
       map: map,
       title: name
     });
-    // debugger;
+    markerClick();
   };
 };
+
+
+function markerClick() {
+  marker.addListener('click', function() {
+    var placeName = $(this)
+    console.log($(this))
+    $('#info-box').animate({width: 'toggle'})
+      console.log('INFOOO')
+        // var data = $('#place-name').attr('data-attribute');
+        // $('#place-name').append(data)
+        // var dataContent = $('#place-content').attr('data-attribute');
+        // $('#place-content').append(dataContent);
+
+        // var image = $('#image').attr('data-attribute');
+        // $('#image').append("<img src='" + image + "'/>");
+        // var title = placeName[0].title
+        // $('.title').append(title);
+        // closeBar();
+})
+}
+
+//function called when info-box has been toggled above
+//close-bar links to the p class of x included in the place.ejs, with event listener animating toggle function to 0 
+//with that event listener closes the box
+function closeBar() {
+    $('#close-bar').one('click', function() {
+        debugger;
+        $('#info-box').animate({width: 'toggle'})
+         console.log("Animation complete!")
+         $('.title').empty();
+         $('#image').empty();
+         $('#place-name').empty();
+         $('#place-content').empty();
+        })
+    };
 
 
 

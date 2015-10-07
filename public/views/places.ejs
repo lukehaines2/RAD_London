@@ -23,18 +23,12 @@
 
   <div id="map"></div>
 
-  <div class="information" id="info-box">
+<div class="information" id="info-box">
     <h2 class="title"></h2>
 
     <div id="close-side">
       <p id="close-bar">X</p>
     </div>
-
-
-    <div id="close-side">
-      <p id="close-bar">X</p>
-    </div>
-
 
   <% for(var i = 0; i < places.length; i ++) { %>
     <div class="place-container">
@@ -44,6 +38,8 @@
       <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>   
     </div>
   <% } %>
+  
+</div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
 <script src="/js/map.js"></script>
