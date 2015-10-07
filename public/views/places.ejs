@@ -25,29 +25,25 @@
 
   <div class="information" id="info-box">
     <h2 class="title"></h2>
-<<<<<<< HEAD
 
     <div id="close-side">
       <p id="close-bar">X</p>
     </div>
 
-=======
+
     <div id="close-side">
       <p id="close-bar">X</p>
     </div>
->>>>>>> 054a3a6304050f06cdab8564e256dd5d67db49af
-    <ul>
-    <% for(var i = 0; i < places.length; i ++) { %>
-      <li id="image" data-attribute="<%= places[i].historyModels[0].image %>"></li>
-      <li id="place-name" data-attribute="<%= places[i].name %>"></li>
-      <li id="place-content" data-attribute="<%= places[i].historyModels[0].content %>"></li>      
-    <% } %>
-  </ul>
-<<<<<<< HEAD
 
-=======
->>>>>>> 054a3a6304050f06cdab8564e256dd5d67db49af
-  </div>
+
+  <% for(var i = 0; i < places.length; i ++) { %>
+    <div class="place-container">
+      <p class="image"><%= places[i].historyModels[0].image %></p>
+      <p class="place-name"><%= places[i].name %></p>
+      <p class="place-content"><%= places[i].historyModels[0].content %></p>
+      <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>   
+    </div>
+  <% } %>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
 <script src="/js/map.js"></script>
