@@ -5,22 +5,17 @@ var bodyParser    = require('body-parser');
 var morgan        = require('morgan');
 var port          = process.env.PORT || 3000;
 
-<<<<<<< HEAD
+
 app.get('/', function(req, res) {
   res.render('index')
 });
-=======
+
 mongoose.connect('mongodb://localhost:27017/rad-london')
->>>>>>> 996f8034f5239286dad4e67757899b8fdae2c926
+
 
 var routes = require('./config/routes');
 app.use(routes);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 996f8034f5239286dad4e67757899b8fdae2c926
 // FAVICON
 var favicon = require('serve-favicon');
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
