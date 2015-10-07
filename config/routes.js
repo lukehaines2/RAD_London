@@ -14,4 +14,10 @@ router.route('/places')
   .get(placesController.getPlaces)
   .post(placesController.postPlaces);
 
+router.route('/signup')
+  .get(usersController.authTwitter)
+  .get(usersController.authTwitterCallback);
+
 module.exports = router
+
+
