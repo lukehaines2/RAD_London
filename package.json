@@ -18,8 +18,11 @@
   "homepage": "https://github.com/lukehaines2/RAD_London#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.0",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "express-session": "^1.11.3",
     "font-awesome": "^4.4.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.9",

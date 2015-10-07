@@ -1,13 +1,13 @@
-function authTwitter() {
-  '/auth/twitter',
-  passport.authenticate('twitter'));
-}
+// function authTwitter() {
+//   '/auth/twitter',
+//   passport.authenticate('twitter'));
+// }
 
-function authTwitterCallback() {
-  ('/auth/twitter/callback', 
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
-}
+// function authTwitterCallback() {
+//   ('/auth/twitter/callback', 
+//   passport.authenticate('twitter', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/signup');
+//   });
+// }

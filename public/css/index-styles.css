@@ -1,5 +1,5 @@
 html, body {
-  background-image: url("http://caretolook.com/wp-content/uploads/2015/02/shoreditch-3.jpg");
+  /*background-image: url("http://caretolook.com/wp-content/uploads/2015/02/shoreditch-3.jpg");*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -97,4 +97,8 @@ footer {
   font-color: black;
   position: relative;
   top: 6%;
+}
+
+p {
+  font-family: 'Playfair Display SC', serif;
 }
