@@ -27,7 +27,7 @@
 
 <div class="information" id="info-box">
     <p id="close-bar">X</p>
-    <i id="like" class="fa fa-thumbs-o-up"></i>
+    <!-- <i id="like" class="fa fa-thumbs-o-up"></i> -->
     <h2 class="title"></h2>
     <div class="image"><img id="image-tag" src=""></div>
     <p class="place-information"></p>
@@ -42,21 +42,10 @@
       <p class="image"><%= places[i].historyModels[0].image %></p>
       <p class="place-name"><%= places[i].name %></p>
       <p class="place-content"><%= places[i].historyModels[0].content %></p>
-      <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>   
+      <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>
     </div>
   <% } %>
 </div>
-
-
-    <ul>
-    <% for(var i = 0; i < places.length; i ++) { %>
-      <li id="image" data-attribute="<%= places[i].historyModels[0].image %>"></li>
-      <li id="place-name" data-attribute="<%= places[i].name %>"></li>
-      <li id="place-content" data-attribute="<%= places[i].historyModels[0].content %>"></li>      
-    <% } %>
-    </ul>
-  </div>
-
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
   <script src="/js/map.js"></script>
