@@ -44,6 +44,7 @@ marker.addListener('click', function() {
             var title = placeName[0].title
             $('.title').append(title);
             closeBar();
+            markerClose();
     })
 }
 
@@ -52,7 +53,6 @@ marker.addListener('click', function() {
 //with that event listener closes the box
 function closeBar() {
     $('#close-bar').one('click', function() {
-        debugger;
         $('#info-box').animate({width: 'toggle'})
          console.log("Animation complete!")
          $('.title').empty();
@@ -62,6 +62,21 @@ function closeBar() {
         })
     };
 
+function markerClose() {
+     marker.addListener('click', function() {
+        debugger;
+        markerCloseBar();
+    })
+}
+
+function markerCloseBar() {
+    $('#info-box').animate({width: 'toggle'});
+        console.log("Animation complete!")
+        $('.title').empty();
+        $('#image').empty();
+        $('#place-name').empty();
+        $('#place-content').empty();
+}
 
 var styledArray = [
     {
