@@ -1,50 +1,12 @@
-var express = require('express');
-var router = express.Router();
-//PARSES INFO FROM POST
-var bodyParser = require('body-parser');
-//USED TO MANIPULATE POST METHODS
+var express           = require('express');
+var router            = express.Router();
+var bodyParser        = require('body-parser');
+var methodOverride    = require('method-override');
+var mongoose          = require('mongoose');
+var Histories         = require('../models/history');
+var Place             = require('../models/place');
+var User              = require('../models/user');
 
-
-var methodOverride = require('method-override');
-
-var mongoose = require('mongoose');
-
-var Histories = require('../models/history');
-var Place = require('../models/place');
-var User = require('../models/user');
-
-
-// router.route('/')
-//   .get(placesController.home);
-
-// router.route('/places')
-//   .get(placesController.getPlaces)
-//   .post(placesController.postPlaces);
-
-// router.route('/signup')
-//   .get(usersController.authTwitter)
-//   .get(usersController.authTwitterCallback);
-
-// app.get('/auth/twitter', passport.authenticate('twitter'));
-
-// app.get('/auth/twitter/callback', 
-//   passport.authenticate('twitter', {
-//     successRedirect: '/profile',
-//     failureRedirect: '/'
-//   })
-// )
-
-// function isLoggedIn(req, res, next) {
-//   if (req.isAuthenticated())
-//     return next();
-
-//   res.redirect('/')
-// }
-
-// function getPlaces(req, res){
-  
-//   });
-// };
 
 
 //TWITTER ROUTES
@@ -60,7 +22,6 @@ module.exports = function(app, passport) {
       res.render('places.ejs', { places: places } );
     });
   });
-
 
 
   app.get('/auth/twitter', passport.authenticate('twitter'));
@@ -83,7 +44,5 @@ module.exports = function(app, passport) {
     res.redirect('/')
   }
 }
-
-// module.exports = router
 
 
