@@ -5,10 +5,12 @@ var bodyParser    = require('body-parser');
 var morgan        = require('morgan');
 var port          = process.env.PORT || 3000;
 
+app.get('/', function(req, res) {
+  res.render('index')
+});
 
 var routes = require('./config/routes');
 app.use(routes);
-
 
 // FAVICON
 var favicon = require('serve-favicon');

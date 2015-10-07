@@ -40,9 +40,10 @@ function setMarkers(map) {
 function closeBar() {
     $('#close-bar').on('click', function() {
         $('#info-box').animate({width: 'toggle'})
-        $('.title').empty();
-    })
-}
+         console.log("Animation complete!")
+         $('.title').empty();
+        })
+    };
 
 
 var styledArray = [
