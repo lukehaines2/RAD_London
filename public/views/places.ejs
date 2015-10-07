@@ -1,1 +1,55 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RAD.LONDON</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1 id="logo">RAD.LONDON</h1>
+    </div>
+    <div class="navigation-links">
+      <ul id="nav-links">
+        <li class="home"><a href="/">Home</a></li>
+        <li class="places"><a href="/places">Places</a></li>
+      </ul>
+    </div>
+  </header>
+  <br>
+  <br>
+  <div id="map"></div>
+
+<div class="information" id="info-box">
+    <p id="close-bar">X</p>
+    <!-- <i id="like" class="fa fa-thumbs-o-up"></i> -->
+    <h2 class="title"></h2>
+    <div class="image"><img id="image-tag" src=""></div>
+    <p class="place-information"></p>
+    <div id="close-side">
+    </div>
+</div>
+
+<!-- This is hidden as we are just using it to pass db to map -->
+<div id="functionality">
+  <% for(var i = 0; i < places.length; i ++) { %>
+    <div class="place-container">
+      <p class="image"><%= places[i].historyModels[0].image %></p>
+      <p class="place-name"><%= places[i].name %></p>
+      <p class="place-content"><%= places[i].historyModels[0].content %></p>
+      <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>
+    </div>
+  <% } %>
+</div>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
+  <script src="/js/map.js"></script>
+</body>
+</html>
+
