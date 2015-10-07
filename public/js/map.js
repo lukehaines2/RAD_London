@@ -8,59 +8,76 @@ function initMap() {
   setMarkers(map);
 }
 
-var locations = [
-    ['Battle of Cable Street', 51.519184, -0.058872], 
-    ['Suffragettes in the EastEnd', 51.5144, 0.0586], 
-    ['The Blind Beggar', 51.519184, -0.058872], 
-    ['Bow Road Police Station', 51.533791, -0.024848]
-];
 
-
+var marker;
 
 function setMarkers(map) {
-  for (var i = 0; i < locations.length; i++) {
-    var location = locations[i];
-    var marker = new google.maps.Marker({
-      position: {lat: location[1], lng: location[2]},
+  var places = $('.place-container');
+  for (var i = 0; i < places.length; i++) {
+    var place = places[i];
+    var name = $(place).find('.place-name')[0].innerHTML;
+    var lat = parseFloat($(place).find('.lat')[0].innerHTML);
+    var lng = parseFloat($(place).find('.long')[0].innerHTML);
+    var content = $(place).find('.place-content')[0].innerHTML;
+    var image = $(place).find('.image')[0].innerHTML;
+//sorry about this but lat is actually long in seed data and visa versa :)
+    marker = new google.maps.Marker({
+      position: {lat: lng, lng: lat},
       map: map,
-      title: location[0]
+      title: name,
+      content: content,
+      image: image
     });
+    markerClick();
+  };
+  likeClick();
+};
 
-    marker.addListener('click', function() {
-        var placeName = $(this)
-        $('#info-box').animate({width: 'toggle'})
-            var data = $('#place-name').attr('data-attribute');
-            $('#place-name').append(data)
-            var dataContent = $('#place-content').attr('data-attribute');
-            $('#place-content').append(dataContent);
 
-            var image = $('#image').attr('data-attribute');
-            $('#image').append("<img src='" + image + "'/>");
-            var title = placeName[0].title
-            $('.title').append(title);
-            closeBar();
-    })
-  }
+function markerClick() {
+  marker.addListener('click', function() {
+    var placeName = $(this)
+    $('#info-box').animate({width: 'toggle'})
+      if($('.title').is(':empty')){
+          $('#image-tag').attr('src', placeName[0].image)
+          $('.title').append(placeName[0].title);
+          $('.place-information').append(placeName[0].content);
+        closeBar();
+      } else {
+         $('.title').empty();
+         $('.place-information').empty();
+         $('#image-tag').empty();
+         $('#like').empty()
+         count = 0;
+      };
+  });
+};
+
+function closeBar() {
+  $('#close-bar').one('click', function() {
+      $('#info-box').animate({width: 'toggle'})
+       // console.log("Animation complete!")
+       $('.title').empty();
+       $('.place-information').empty();
+       $('#image-tag').empty();
+       $('#like').empty();
+  });
+};
+
+var count = 0;
+
+function likeClick() {
+  $('#like').on('click', function(){
+    console.log("IS THIS WORKING?????")
+    // $.post("/places", function(data){
+    //   count ++
+    //   console.log(count);
+    //   $('#like').append("<i id='like' class='fa fa-thumbs-o-up'></i>");
+    // })
+  })
 }
 
-//function called when info-box has been toggled above
-//close-bar links to the p class of x included in the place.ejs, with event listener animating toggle function to 0 
-//with that event listener closes the box
-function closeBar() {
-    $('#close-bar').on('click', function() {
-        $('#info-box').animate({width: 'toggle'})
-         console.log("Animation complete!")
-         $('.title').empty();
-         $('#place-name').empty();
-         $('#image').empty();
-         $('#place-content').empty();
-        })
-    };
 
-
-//     });
-//   }
-// }
 
 var styledArray = [
     {

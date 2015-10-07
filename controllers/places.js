@@ -8,11 +8,7 @@ var User = require('../models/user');
 
 //GET //
 function home(req, res){
-<<<<<<< HEAD
   res.render('index.ejs')
-=======
-  res.render('index.ejs');
->>>>>>> 6ace5c57ead2ce68db83f0c4640a5140528e764c
   // res.json
 };
 
@@ -22,7 +18,7 @@ function getPlaces(req, res){
   Place.find({}, function(err, places){
     if(err) console.log(err)
     res.render('places.ejs', { places: places });
-
+    
   });
 };
 
