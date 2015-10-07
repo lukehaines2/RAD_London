@@ -63,14 +63,14 @@ function closeBar() {
     };
 
 function markerClose() {
-    marker.addListener('click', function() {
+     marker.addListener('click', function() {
         debugger;
         markerCloseBar();
     })
 }
 
 function markerCloseBar() {
-    $('#info-box').animate({width: 'toggle'}).done();
+    $('#info-box').animate({width: 'toggle'});
         console.log("Animation complete!")
         $('.title').empty();
         $('#image').empty();
