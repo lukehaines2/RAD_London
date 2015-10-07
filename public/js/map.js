@@ -30,6 +30,25 @@ function setMarkers(map) {
    });
    markerClick();
  };
+
+  var places = $('.place-container');
+  for (var i = 0; i < places.length; i++) {
+    var place = places[i];
+    var name = $(place).find('.place-name')[0].innerHTML;
+    var lat = parseFloat($(place).find('.lat')[0].innerHTML);
+    var lng = parseFloat($(place).find('.long')[0].innerHTML);
+    var content = $(place).find('.place-content')[0].innerHTML;
+    var image = $(place).find('.image')[0].innerHTML;
+//sorry about this but lat is actually long in seed data and visa versa :)
+    marker = new google.maps.Marker({
+      position: {lat: lng, lng: lat},
+      map: map,
+      title: name,
+      content: content,
+      image: image
+    });
+    markerClick();
+  };
 };
 
 
@@ -73,6 +92,77 @@ function likeClick() {
     })
   })
 }
+  marker.addListener('click', function() {
+    var placeName = $(this)
+    $('#info-box').animate({width: 'toggle'})
+      if($('.title').is(':empty')){
+        $('#image-tag').attr('src', placeName[0].image)
+        $('.title').append(placeName[0].title);
+        $('.place-information').append(placeName[0].content);
+        closeBar();
+      } else {
+         $('.title').empty();
+         $('.place-information').empty();
+         $('#image-tag').empty();
+      };
+  });
+};
+
+
+
+//function called when info-box has been toggled above
+//close-bar links to the p class of x included in the place.ejs, with event listener animating toggle function to 0 
+//with that event listener closes the box
+function closeBar() {
+  $('#close-bar').one('click', function() {
+      $('#info-box').animate({width: 'toggle'})
+       // console.log("Animation complete!")
+       $('.title').empty();
+       $('.place-information').empty();
+       $('#image-tag').empty();
+  })
+
+};
+// var count = 0;
+
+// function likeClick() {
+//   $('#like').on('click', function(){
+//     console.log("IS THIS WORKING?????")
+//     // $.post("/places", function(data){
+//     //   count ++
+//     //   console.log(count);
+//     //   $('#like').append("<i id='like' class='fa fa-thumbs-o-up'></i>");
+//     // })
+//   })
+// }
+
+// $('#close-bar').one('click', function() {
+//     $('#info-box').animate({width: 'toggle'})
+//      console.log("Animation complete!")
+//      $('.title').empty();
+//      $('#image').empty();
+//      $('#place-name').empty();
+//      $('#place-content').empty();
+//     })
+// };
+
+
+// function markerClose() {
+//      marker.addListener('click', function() {
+//         debugger;
+//         markerCloseBar();
+//     })
+// }
+
+// function markerCloseBar() {
+//     $('#info-box').animate({width: 'toggle'});
+//         console.log("Animation complete!")
+//         $('.title').empty();
+//         $('#image').empty();
+//         $('#place-name').empty();
+//         $('#place-content').empty();
+// }
+
 
 var styledArray = [
    {
