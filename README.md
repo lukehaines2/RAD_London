@@ -2,7 +2,8 @@
 
 Interactive map of East London marking the popular historical locations revealing the name, pictures and information. Signing in through Twitter will provide the user with the ability to "check into" the locations. 
 
-## PICTURE GOES HERE ##
+![Frontpage](https://cloud.githubusercontent.com/assets/13486932/10378251/ca572906-6dff-11e5-9213-66902c9db244.png "Front Page")
+
 
 ###Approach/How it works
 User is presented with a landing page, giving them an understanding of the use of the web application. User has the ability to sign in via Twitter with the twitter sign in page, or via the login button in the navigaton bar. Once signed in user twitter image will appear next to the home button on navigation bar. 
