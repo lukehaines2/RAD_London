@@ -1,6 +1,6 @@
 function initMap() {
  var map = new google.maps.Map(document.getElementById('map'), {
-   center: {lat: 51.533746, lng: -0.024878},
+   center: {lat: 51.533791, lng: 0.024238},
    zoom: 13,
    mapTypeId: google.maps.MapTypeId.ROADMAP,
    styles: styledArray
@@ -30,7 +30,7 @@ function setMarkers(map) {
      title: name,
      content: content,
      image: image,
-     // id: id,
+     animation: google.maps.Animation.DROP,
      placeId: placeId
    });
    markerClick();
@@ -96,7 +96,7 @@ function likeClick() {
     }).done(function(){
       console.log('i ceaser')
     })
-    $('.title').append($('.twitter-pic')[0])
+    $('.profile-picture').append($('.twitter-pic')[0])
   })
 }
 

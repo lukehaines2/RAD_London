@@ -166,15 +166,15 @@ a, twitt-button {
 
 #info-box {
   width: 40%;
-  height: 77.3%;
+  height: 76.8%;
   z-index: 99;
   /*float: right;*/
-  border: 10px solid rgba(0,0,0,0.9);
+  border: 10px solid rgba(0,0,0,0.1);
   display: none;
   position: absolute;
   right: 0;
-  top: 12.3%;
-  background-color: rgba(0,0,0,0.9);
+  top: 13.6%;
+  background-color: rgba(0,0,0,0.75);
   color: white;
   overflow: auto;
   padding-left: 7px;
@@ -192,6 +192,7 @@ li{
 .title {
   display: inline-block;
   width: 90%;
+  text-align: center;
 }
 
 #close-bar {
@@ -214,6 +215,10 @@ li{
   border-radius: 50px 50px;
   width: 100px;
 }*/
+#like{
+  display: inline-block;
+  text-align: center;
+}
 
 #like:hover{
   cursor: pointer;
@@ -225,6 +230,11 @@ li{
   display: none;
 }
 #image-tag{
+  padding-top: 5px;
   width:100%;
 }
-
+.profile-picture{
+  display: inline-block;
+  margin:  0 auto;
+  text-align: center;
+}
