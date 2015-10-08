@@ -163,3 +163,13 @@ li{
   border-radius: 50px 50px;
   width: 100px;
 }
+
+#like:hover{
+  cursor: pointer;
+}
+.actual-place-id{
+  display: none;
+}
+#twitter-hidden{
+  display: none;
+}

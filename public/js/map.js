@@ -19,27 +19,42 @@ function setMarkers(map) {
    var lng = parseFloat($(place).find('.long')[0].innerHTML);
    var content = $(place).find('.place-content')[0].innerHTML;
    var image = $(place).find('.image')[0].innerHTML;
+   // var id = $(place).find('.place-id')[0].innerHTML;
+   var placeId = $(place).find('.real-place-id')[0].innerHTML;
+   // debugger;
+
 //sorry about this but lat is actually long in seed data and visa versa :simple_smile:
    marker = new google.maps.Marker({
      position: {lat: lng, lng: lat},
      map: map,
      title: name,
      content: content,
-     image: image
+     image: image,
+     // id: id,
+     placeId: placeId
    });
    markerClick();
  };
 };
 
+var actualPlaceId = {};
 
 function markerClick() {
  marker.addListener('click', function() {
    var placeName = $(this)
+   console.log(placeName);
    $('#info-box').animate({width: 'toggle'})
      if($('.title').is(':empty')){
        $('#image-tag').attr('src', placeName[0].image)
        $('.title').append(placeName[0].title);
        $('.place-information').append(placeName[0].content);
+       // $('.location-id').append(placeName[0].id);
+
+       actualPlaceId = placeName[0].placeId;
+
+       $('.actual-place-id').append(placeName[0].placeId);
+       // console.log('actual', $('.actual-place-id').append(placeName[0].placeId))
+       // debugger;
        closeBar();
      } else {
         $('.title').empty();
@@ -62,14 +77,26 @@ function closeBar() {
 };
 var count = 0;
 
+var gettingPlace = [];
+
+function getIdOfPlace() {
+  var actualNameOfPlace = $('.actual-place-id').text();
+  var nameOfUser = $('.user-id').text();
+  gettingPlace.push(actualNameOfPlace);
+};
+
 function likeClick() {
   $('#like').on('click', function(){
-    console.log("IS THIS WORKING?????")
-    $.post("/places", function(data){
-      count ++
-      console.log(count);
-      $('#like').append("<i id='like' class='fa fa-thumbs-o-up'></i>");
+    getIdOfPlace();
+    console.log(actualPlaceId);
+    $.ajax({
+      method: 'PUT',
+      url: '/places',
+      data: {places: actualPlaceId}
+    }).done(function(){
+      console.log('i ceaser')
     })
+    $('.title').append($('.twitter-pic')[0])
   })
 }
 
@@ -86,21 +113,6 @@ function closeBar() {
   })
 
 };
-// var count = 0;
-
-// function likeClick() {
-//   $('#like').on('click', function(){
-//     console.log("IS THIS WORKING?????")
-//     // $.post("/places", function(data){
-//     //   count ++
-//     //   console.log(count);
-//     //   $('#like').append("<i id='like' class='fa fa-thumbs-o-up'></i>");
-//     // })
-//   })
-// }
-
-
-
 
 var styledArray = [
    {
