@@ -1,6 +1,6 @@
 function initMap() {
  var map = new google.maps.Map(document.getElementById('map'), {
-   center: {lat: 51.533791, lng: 0.024238},
+   center: {lat: 51.533746, lng: -0.024878},
    zoom: 13,
    mapTypeId: google.maps.MapTypeId.ROADMAP,
    styles: styledArray
@@ -31,19 +31,29 @@ function setMarkers(map) {
      content: content,
      image: image,
      animation: google.maps.Animation.DROP,
+     // id: id,
      placeId: placeId
    });
-   markerClick();
+   marker.addListener('click', toggleBounce);
+   
  };
 };
+
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+    markerClick();
+  }
+}
 
 var actualPlaceId = {};
 
 function markerClick() {
  marker.addListener('click', function() {
    var placeName = $(this)
-   console.log(placeName);
-   $('#info-box').animate({width: 'toggle'})
+     $('#info-box').animate({width: 'toggle'})
      if($('.title').is(':empty')){
        $('#image-tag').attr('src', placeName[0].image)
        $('.title').append(placeName[0].title);
@@ -53,7 +63,7 @@ function markerClick() {
        actualPlaceId = placeName[0].placeId;
 
        $('.actual-place-id').append(placeName[0].placeId);
-       // console.log('actual', $('.actual-place-id').append(placeName[0].placeId))
+       //'.actual-place-id').append(placeName[0].placeId))
        // debugger;
        closeBar();
      } else {
@@ -68,7 +78,7 @@ function markerClick() {
 function closeBar() {
  $('#close-bar').one('click', function() {
      $('#info-box').animate({width: 'toggle'})
-      // console.log("Animation complete!")
+      //omplete!")
       $('.title').empty();
       $('.place-information').empty();
       $('#image-tag').empty();
@@ -88,15 +98,14 @@ function getIdOfPlace() {
 function likeClick() {
   $('#like').on('click', function(){
     getIdOfPlace();
-    console.log(actualPlaceId);
+   d);
     $.ajax({
       method: 'PUT',
       url: '/places',
       data: {places: actualPlaceId}
     }).done(function(){
-      console.log('i ceaser')
-    })
-    $('.profile-picture').append($('.twitter-pic')[0])
+         })
+    $('.title').append($('.twitter-pic')[0])
   })
 }
 
@@ -106,7 +115,7 @@ function likeClick() {
 function closeBar() {
   $('#close-bar').one('click', function() {
       $('#info-box').animate({width: 'toggle'})
-       // console.log("Animation complete!")
+       //omplete!")
        $('.title').empty();
        $('.place-information').empty();
        $('#image-tag').empty();
