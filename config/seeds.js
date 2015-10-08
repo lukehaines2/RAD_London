@@ -118,3 +118,10 @@ place6.save(function(err, history){
 
 // process.exit();
 
+var user = new User({
+  twitter: {
+    displayName: 'louise',
+    userName: 'louise1'
+  }, 
+  place: [place6];
+})

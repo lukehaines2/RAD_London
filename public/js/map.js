@@ -19,13 +19,16 @@ function setMarkers(map) {
    var lng = parseFloat($(place).find('.long')[0].innerHTML);
    var content = $(place).find('.place-content')[0].innerHTML;
    var image = $(place).find('.image')[0].innerHTML;
+   var id = $(place).find('.place-id')[0].innerHTML;
+
 //sorry about this but lat is actually long in seed data and visa versa :simple_smile:
    marker = new google.maps.Marker({
      position: {lat: lng, lng: lat},
      map: map,
      title: name,
      content: content,
-     image: image
+     image: image,
+     id: id
    });
    markerClick();
  };
@@ -40,6 +43,7 @@ function markerClick() {
        $('#image-tag').attr('src', placeName[0].image)
        $('.title').append(placeName[0].title);
        $('.place-information').append(placeName[0].content);
+       $('.location-id').append(placeName[0].id);
        closeBar();
      } else {
         $('.title').empty();
@@ -62,16 +66,28 @@ function closeBar() {
 };
 var count = 0;
 
+var gettingPlace = [];
+
+function getIdOfPlace() {
+  var nameOfPlace = $('.location-id').text();
+  var nameOfUser = $('.user-id').text();
+  console.log(nameOfPlace)
+  gettingPlace.push(nameOfPlace);
+};
+
 function likeClick() {
   $('#like').on('click', function(){
-    console.log("IS THIS WORKING?????")
-    $.post("/places", function(data){
-      count ++
-      console.log(count);
-      $('#like').append("<i id='like' class='fa fa-thumbs-o-up'></i>");
+    getIdOfPlace();
+    console.log(gettingPlace)
+      $.ajax({
+        method: 'PUT',
+        url: '/places',
+        data: { places: gettingPlace[0]}
+      }).done(function(msg) {
+    alert("Data Saved: " + msg);
+  });
     })
-  })
-}
+  }
 
 //function called when info-box has been toggled above
 //close-bar links to the p class of x included in the place.ejs, with event listener animating toggle function to 0 

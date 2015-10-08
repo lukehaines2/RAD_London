@@ -7,7 +7,6 @@ var Histories         = require('../models/history');
 var Place             = require('../models/place');
 var User              = require('../models/user');
 
-
 //TWITTER ROUTES
 module.exports = function(app, passport) {
 
@@ -41,6 +40,25 @@ module.exports = function(app, passport) {
       failureRedirect: '/'
     })
   )
+
+  app.put('/places', isLoggedIn, function(req, res, next) {
+      // return User.findById
+      //if user exists grab user id and push place id in to user.places object
+      console.log(req.user, "isbfibfipwf")
+        JSON.stringify(req.body);
+       
+        // findByIdAndUpdate()
+        // console.log("u have found a user")
+      
+        //  console.log("outside")
+  })
+
+      // if(req.user){
+      //   console.log(req.user, "isbfibfipwf")
+      //   next();
+      //  } else {
+      //   redirect('/')
+      //  }
 
   app.get('/profile', function(req, res) {
     res.send("it's working")

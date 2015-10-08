@@ -28,17 +28,18 @@
 
 <div class="information" id="info-box">
     <p id="close-bar">X</p>
-    <!-- <i id="like" class="fa fa-thumbs-o-up"></i> -->
+    <i id="like" class="fa fa-thumbs-o-up"></i>
     <h2 class="title"></h2>
     <div class="image"><img id="image-tag" src=""></div>
     <p class="place-information"></p>
+    <p class="location-id"></p>
     <div id="close-side">
     </div>
 </div>
 
 
 <% if(user) { %>
-  <p>User object: <%= user %></p>
+  <p class="user-id">User object: <%= user %></p>
   <p>USER: <%= user.twitter.displayName %></p>
   <p>Profile Image: <%= user.twitter.profileImage.replace('_normal','_bigger') %></p>
   <div class="twitt-profile-image"><img class="twitter-pic" src="<%= user.twitter.profileImage.replace('_normal','_bigger')%>"></div>
@@ -50,6 +51,7 @@
   <% for(var i = 0; i < places.length; i ++) { %>
     <div class="place-container">
       <p class="image"><%= places[i].historyModels[0].image %></p>
+      <p class="place-id"><%= places[i].historyModels[0]._id  %></p>
       <p class="place-name"><%= places[i].name %></p>
       <p class="place-content"><%= places[i].historyModels[0].content %></p>
       <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>

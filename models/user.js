@@ -9,7 +9,8 @@ var userSchema = new mongoose.Schema({
     displayName  : String,
     username     : String,
     profileImage : String
-  }
-})
+  }, 
+  places: [{ type: mongoose.Schema.ObjectId, ref: 'Place' }]
+});
 
 module.exports = mongoose.model('User', userSchema);
