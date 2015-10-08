@@ -42,9 +42,9 @@ module.exports = function(app, passport) {
     })
   )
 
-  app.get('/profile', function(req, res) {
-    res.send("it's working")
-  });
+  // app.get('/profile', function(req, res) {
+  //   res.send("it's working")
+  // });
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())

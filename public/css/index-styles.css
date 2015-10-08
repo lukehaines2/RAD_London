@@ -4,7 +4,6 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Playfair Display SC', serif;
   color: black;
   height: 100%;
   margin: 0;
@@ -57,14 +56,9 @@ header {
   margin-left: 2%;
   display: inline-block;
   vertical-align: middle;
-  position:relative;
+  position: relative;
 }
 
-/*#logo {
-  margin: 0;
-  color: white;
-  vertical-align: middle;
-}*/
 
 .navigation-links {
   width: 35%;
@@ -82,7 +76,7 @@ header {
 }
 
 .twitter-pic {
-  width: 60%;
+  width: 20px;
   vertical-align: middle;
   border: 1px solid white;
   border-radius: 50px 50px;
@@ -97,7 +91,7 @@ header {
   width: 300px;
   vertical-align: middle;
   margin-right: 5%;
-  margin-top: -3%;
+  margin-top: -1%;
 }
 
 #nav-links li {
