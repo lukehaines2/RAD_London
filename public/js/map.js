@@ -93,10 +93,10 @@ function likeClick() {
       method: 'PUT',
       url: '/places',
       data: {places: actualPlaceId}
+    }).done(function(){
+      console.log('i ceaser')
     })
-    .done(function(msg) {
-      alert("Data Saved: " + msg);
-    });
+    $('.title').append($('.twitter-pic')[0])
   })
 }
 
