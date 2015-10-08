@@ -10,7 +10,6 @@ var userSchema = new mongoose.Schema({
     username     : String,
     profileImage : String
   }
-  // place_id: { type: mongoose.Schema.ObjectId, ref: 'Place'}
 })
 
 module.exports = mongoose.model('User', userSchema);

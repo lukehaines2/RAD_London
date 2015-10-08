@@ -8,7 +8,6 @@ var Place             = require('../models/place');
 var User              = require('../models/user');
 
 
-
 //TWITTER ROUTES
 module.exports = function(app, passport) {
 
@@ -19,25 +18,12 @@ module.exports = function(app, passport) {
   app.get('/places', function(req, res) {
     Place.find({}, function(err, places){
       if(err) console.log(err)
-
-      // User.find({}, function(err, users) {
-      //   if(err) console.log(err)
         res.render('places.ejs', { places: places, user: req.user }); 
-      // })
     });
   });
 
-
   // route for showing the profile page
     app.get('/profile', isLoggedIn, function(req, res) {
-        // res.redirect('/places')
-        // res.render('/places', {
-        //     user : req.user // get the user out of session and pass to template
-        // });
-      // User.find({}, function(err, users){
-      //   if(err) console.log(err)
-      //   res.render('places.ejs', { users: users } );
-      // });
       res.render('places.ejs', { user: req.user })
     });
 

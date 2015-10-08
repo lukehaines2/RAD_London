@@ -40,7 +40,9 @@
 <% if(user) { %>
   <p>User object: <%= user %></p>
   <p>USER: <%= user.twitter.displayName %></p>
-  <p>Profile Image: <%= user.twitter.profileImage %></p>
+  <p>Profile Image: <%= user.twitter.profileImage.replace('_normal','_bigger') %></p>
+  <div class="twitt-profile-image"><img class="twitter-pic" src="<%= user.twitter.profileImage.replace('_normal','_bigger')%>"></div>
+  
 <% } %>
 
 <!-- This is hidden as we are just using it to pass db to map -->
