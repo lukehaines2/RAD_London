@@ -153,3 +153,13 @@ li{
   background-color: pink;
   display: inline-block;
 }
+
+.twitt-profile-image {
+  height: 30%;
+  width:  30%;
+}
+.twitter-pic{
+  border: 1px solid white;
+  border-radius: 50px 50px;
+  width: 100px;
+}
