@@ -207,3 +207,19 @@ li{
 .place-information {
   font-family: 'Playfair Display', serif;
 }
+
+/*.twitter-pic{
+  border: 1px solid white;
+  border-radius: 50px 50px;
+  width: 100px;
+}*/
+
+#like:hover{
+  cursor: pointer;
+}
+.actual-place-id{
+  display: none;
+}
+#twitter-hidden{
+  display: none;
+}
