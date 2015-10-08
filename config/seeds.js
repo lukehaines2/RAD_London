@@ -8,8 +8,8 @@ mongoose.connect('mongodb://localhost:27017/rad-london')
 
 var place1 = new Place({
   name: 'Bow Rd Police Station ',
-  longitude: 51.533791,
-  latitude: -0.024848
+  longitude: 51.515687,
+  latitude: -0.064888
 })
 
 
@@ -26,7 +26,7 @@ place1.save(function(err, place){
 
 
 var place2 = new Place({
-  name: 'Bromley Public Hall, Bow Rd',
+  name: 'Bromley Public Hall',
   longitude: 51.533791,
   latitude: -0.024848
 });
@@ -65,8 +65,8 @@ place3.save(function(err, history){
 
 var place4 = new Place({
   name: 'The Battle of Cable Street',
-  longitude: 51.533791,
-  latitude: -0.024848
+  longitude: 51.514244,
+  latitude: -0.062828
 });
 
 place4.historyModels.push({
@@ -89,7 +89,7 @@ var place5 = new Place({
 
 place5.historyModels.push({
   name: '1682 Spitalfields Market founded',
-  image: '../images/spitalfields.jpg',
+  image: '../images/spitalfieds.jpg',
   content: "Spitalfields had been relatively rural until the Great Fire of London. By 1666, traders had begun operating beyond the city gates – on the site where today’s market stands. The landmark Truman’s Brewery opened in 1669 and in 1682 King Charles II granted John Balch a Royal Charter giving him the right to hold a market for flesh, fowl and roots to be sold on Thursdays and Saturdays in or near Spital Square. The success of the market encouraged people to settle in the area and following the edict of Nantes in 1685, Huguenots fleeing France brought their silk weaving skills to Spitalfields. Their grand houses can still be seen around what is now the conservation area of Fournier Street."
 }); 
 
@@ -114,6 +114,62 @@ place6.historyModels.push({
 place6.save(function(err, history){
   if(err) console.log(err)
   console.log('place6 saved', place6.name)
+});
+
+var place7 = new Place({
+  name: 'Freedom Press',
+  longitude: 51.515406,
+  latitude: -0.071046
+
+});
+
+
+place7.historyModels.push({
+  name: 'Freedom Press Founded',
+  image: '../images/freedom.jpg',
+  content:"Founded in 1886, it is the largest anarchist publishing house in the country and the oldest of its kind in the English speaking world. It is based at 84b Whitechapel High Street in the East End of London. Alongside its many books and pamphlets, the group also runs a news and comment-based website and until recently regularly published Freedom, which was the only regular anarchist newspaper published nationally in the UK. The collective took the decision to close publication of the full newspaper in March 2014, with the intention of moving most of its content online and switching to a less regular freesheet for paper publication."
+});
+
+
+place7.save(function(err, history){
+  if(err) console.log(err)
+  console.log('place7 saved', place7.name)
+});
+
+
+var place8 = new Place({
+  name: 'Hoxton Market',
+  longitude:51.535398,
+  latitude:-0.08913
+});
+
+place8.historyModels.push({
+  name: 'Hoxton Market',
+  image: '../images/market.jpg',
+  content: 'Documentary photographs of child poverty and slum housing were used in campaigns to help improve living conditions. Disappearing East End trades, the street markets and outdoor celebrations have all been documented through photography.'
+
+});
+
+place8.save(function(err, history){
+  if(err) console.log(err)
+  console.log('place8 saved', place8.name)
+});
+
+var place9 = new Place({
+  name: 'Tailors and dockers Strike',
+  longitude: 51.534386,
+  latitude: -0.057728
+});
+
+place9.historyModels.push({
+  name: 'Tailors and dockers on strike. Joint meetings held on Mile End Waste',
+  image: '../images/strike.jpg',
+  content:"The gulf between the port districts and the Jewish East End was sometimes bridged during moments of crisis. During the wave of strikes in 1889 a group of Jewish tailors organized their own stoppage. The dockers’ Strike Committee, although short of funds, donated £100 to support the tailors. This was by far the largest single donation the tailors received and it helped them win their strike. After their victory, the tailors’ union declared its hope that the 'grand lesson of solidarity from the Dock Labourers' Strike' and the other strikes would 'mark a new and splendid epoch in the history of Labour'. This was to prove overoptimistic and naive, but the benefits of mutual support were clear."
+})
+
+place9.save(function(err, history){
+  if(err) console.log(err)
+  console.log('place9 saved', place9.name)
 });
 
 // process.exit();
