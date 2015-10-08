@@ -167,3 +167,9 @@ li{
 #like:hover{
   cursor: pointer;
 }
+.actual-place-id{
+  display: none;
+}
+#twitter-hidden{
+  display: none;
+}

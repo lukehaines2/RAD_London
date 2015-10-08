@@ -38,13 +38,15 @@
 </div>
 
 
+<!--this is commented out for a reason -->
+<div id="twitter-hidden">
 <% if(user) { %>
   <p class="user-id">User object: <%= user %></p>
   <p>USER: <%= user.twitter.displayName %></p>
   <p>Profile Image: <%= user.twitter.profileImage.replace('_normal','_bigger') %></p>
   <div class="twitt-profile-image"><img class="twitter-pic" src="<%= user.twitter.profileImage.replace('_normal','_bigger')%>"></div>
 <% } %>
-
+</div>
 <!-- This is hidden as we are just using it to pass db to map -->
 <div id="functionality">
   <% for(var i = 0; i < places.length; i ++) { %>
