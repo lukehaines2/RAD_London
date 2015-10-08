@@ -36,6 +36,13 @@
     </div>
 </div>
 
+
+<% if(user) { %>
+  <p>User object: <%= user %></p>
+  <p>USER: <%= user.twitter.displayName %></p>
+  <p>Profile Image: <%= user.twitter.profileImage %></p>
+<% } %>
+
 <!-- This is hidden as we are just using it to pass db to map -->
 <div id="functionality">
   <% for(var i = 0; i < places.length; i ++) { %>
