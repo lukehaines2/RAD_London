@@ -19,32 +19,39 @@
     </div>
     <div class="navigation-links">
       <ul id="nav-links">
-        <li class="home"><a href="http://localhost:3000/">Home</a></li>
-        <li class="places"><a href="http://localhost:3000/places">Places</a></li>
-        <li class="places"><a href="/auth/twitter">Login</a></li>
+        <% if(user) { %>
+          <div class="twitt-profile-image">
+            <img class="twitter-pic" src="<%= user.twitter.profileImage%>">
+          </div>
+        <% } %>
+        <li class="nav-links"><a href="/">Home</a></li>
+        <li class="nav-links"><a href="/places">Places</a></li>
+        <li class="nav-links"><a href="/auth/twitter">Login</a></li>
+        <li class="nav-links"><a href="/auth/twitter/logout">Logout</a></li>
       </ul>
     </div>
   </header>
   <div class="title">
-    <p>RAD LONDON</p>
+    <p id="rad-header">RAD LONDON</p>
   </div>
 
   <div class="blurb">
     <p class="blurb">RAD London is made for tourists and locals alike looking for a virtual tour map of all the popular historical destinations within East London. A collection of different spots with information on the specific locations. Click through to places to reveal the locations.</p>
   </div>
 
-</body>
 
 <footer>
+  <a href="/auth/twitter" class="twitt-button">
   <span class="fa-stack fa-lg">
   <i class="fa fa-square-o fa-stack-2x"></i>
   <i class="fa fa-twitter fa-stack-1x"></i>
 </span>
 TWITTER
-<div class="twitter-button">
+</a>
+<!-- <div class="twitter-button">
     <p>Login or Register with:</p>
     <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
-  </div>
+  </div> -->
 
 </footer>
 </html>

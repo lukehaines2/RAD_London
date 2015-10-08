@@ -12,7 +12,7 @@ var User              = require('../models/user');
 module.exports = function(app, passport) {
 
   app.get('/', function(req, res) {
-    res.render('index.ejs')
+    res.render('index.ejs', { user: req.user })
   });
 
   app.get('/places', function(req, res) {
