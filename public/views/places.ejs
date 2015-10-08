@@ -32,7 +32,8 @@
     <h2 class="title"></h2>
     <div class="image"><img id="image-tag" src=""></div>
     <p class="place-information"></p>
-    <p class="location-id"></p>
+    <p class="location-id">HistoryModel Id= </p>
+    <p class="actual-place-id"></p>
     <div id="close-side">
     </div>
 </div>
@@ -52,6 +53,7 @@
     <div class="place-container">
       <p class="image"><%= places[i].historyModels[0].image %></p>
       <p class="place-id"><%= places[i].historyModels[0]._id  %></p>
+      <p class="real-place-id"><%= places[i]._id  %></p>
       <p class="place-name"><%= places[i].name %></p>
       <p class="place-content"><%= places[i].historyModels[0].content %></p>
       <p class="address"><span class="lat"><%= places[i].latitude %></span><span class="long"><%= places[i].longitude %></span></p>

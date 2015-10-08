@@ -44,16 +44,26 @@ module.exports = function(app, passport) {
   app.put('/places', isLoggedIn, function(req, res, next) {
       // return User.findById
       //if user exists grab user id and push place id in to user.places object
-      var userId = req.user.twitter.id
-       console.log(JSON.stringify(req.body));
-       
-        User.findById(userId, function(err, ui) {
-          if(err) console.log(err) 
-          console.log(ui, 'hi hi ui')
+      // var placeId = JSON.stringify(req.body);
+
+      var userId = req.user.id
+      var placeId = req.body.places
+      console.log('userid', userId)
+      console.log('place id', placeId)
+
+      User.findById(userId, function(err, user){
+        if (err) console.log(err)
+        Place.findById(placeId, function(err, place){
+          if (err) console.log(err)
+          user.places.push(place)
+          user.save(function(err, savedUser){
+            if (err) console.log(err)
+            console.log(savedUser);
+          })
         })
-        // console.log("u have found a user")
-      
-        //  console.log("outside")
+      })
+
+
   })
 
   app.get('/profile', function(req, res) {
