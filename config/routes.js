@@ -8,28 +8,23 @@ var Place             = require('../models/place');
 var User              = require('../models/user');
 
 
-
 //TWITTER ROUTES
 module.exports = function(app, passport) {
 
   app.get('/', function(req, res) {
-    res.render('index.ejs')
+    res.render('index.ejs', { user: req.user })
   });
 
   app.get('/places', function(req, res) {
     Place.find({}, function(err, places){
       if(err) console.log(err)
-      res.render('places.ejs', { places: places } );
+        res.render('places.ejs', { places: places, user: req.user }); 
     });
   });
 
-
   // route for showing the profile page
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.redirect('/places')
-        // res.render('/places', {
-        //     user : req.user // get the user out of session and pass to template
-        // });
+      res.render('places.ejs', { user: req.user })
     });
 
         // route for logging out
@@ -38,7 +33,7 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
-  app.get('/auth/twitter', passport.authenticate('twitter'));
+  app.get('/auth/twitter', passport.authenticate('twitter', { scope: ['profile.photos','email'] }));
 
   app.get('/auth/twitter/callback', 
     passport.authenticate('twitter', {
@@ -47,9 +42,9 @@ module.exports = function(app, passport) {
     })
   )
 
-  app.get('/profile', function(req, res) {
-    res.send("it's working")
-  });
+  // app.get('/profile', function(req, res) {
+  //   res.send("it's working")
+  // });
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
@@ -58,3 +53,5 @@ module.exports = function(app, passport) {
     res.redirect('/')
   }
 }
+
+

@@ -4,8 +4,6 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: no-repeat;
-  font-family: 'Oswald', sans-serif;
   color: black;
   height: 100%;
   margin: 0;
@@ -13,59 +11,87 @@ html, body {
 }
 
 .title {
-  /*background-color: black;*/
-  font-size: 200px;
   color: white;
-  text-align: center;
-  position: relative;
-  top: 5%;
-  padding: 0;
-}
-
-.blurb {
-  /*background-color: black;*/
-  width: 750px;
-  font-size: 20px;
-  color: white;
-  margin: 0 auto;
   text-align: center;
   position: relative;
   top: 3%;
   padding: 0;
 }
 
+#rad-header {
+  font-size: 120px;
+  /*border: 1px solid red;*/
+  margin-bottom: 6%;
+  /*font-family: 'Playfair Display SC', serif;*/
+}
+
+.blurb {
+  width: 750px;
+  font-size: 20px;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 5%;
+  padding: 0;
+}
+
 header {
   background-color: #444;
   width: 100%;
-  height: 5%;
-}
-
-.logo {
-  width: 30%;
-  margin-left: 5%;
-  display: inline-block;
+  height: 6%;
 }
 
 #logo {
-  margin: 0;
-  color: white;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50px 50px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
+.logo {
+  padding-top: 2px;
+  width: 30%;
+  margin-left: 2%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+
 .navigation-links {
-  width: 25%;
-  margin-top: 15px;
+  width: 35%;
+  margin-top: 10px;
   display: inline-block;
   float: right;
   color: white;
   text-align: right;
 }
 
+.twitt-profile-image {
+  display: inline-block;
+  /*border: 1px solid red;*/
+  height: 25px;
+}
+
+.twitter-pic {
+  width: 20px;
+  vertical-align: middle;
+  border: 1px solid white;
+  border-radius: 50px 50px;
+}
+
 #nav-links {
+  /*border: 1px solid red;*/
   list-style-type: none;
   margin: 0;
   display: inline-block;
-  margin-right: 25%;
-  width: 50%;
+  height: 25px;
+  width: 300px;
+  vertical-align: middle;
+  margin-right: 5%;
+  margin-top: -1%;
 }
 
 #nav-links li {
@@ -83,8 +109,9 @@ li :hover {
  color: #A23730;
 }
 
-.places {
-  margin-left: 20%;
+.nav-links {
+  margin-left: 5%;
+  vertical-align: middle;
 }
 
 a {
@@ -101,4 +128,9 @@ footer {
 
 p {
   font-family: 'Playfair Display SC', serif;
+}
+
+a, twitt-button {
+  text-decoration: none;
+  color: white;
 }
