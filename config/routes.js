@@ -17,7 +17,7 @@ module.exports = function(app, passport) {
   app.get('/places', function(req, res) {
     Place.find({}, function(err, places){
       if(err) console.log(err)
-        res.render('places.ejs', { places: places, user: req.user }); 
+      res.render('places.ejs', { places: places, user: req.user }); 
     });
   });
 
@@ -44,21 +44,17 @@ module.exports = function(app, passport) {
   app.put('/places', isLoggedIn, function(req, res, next) {
       // return User.findById
       //if user exists grab user id and push place id in to user.places object
-      console.log(req.user, "isbfibfipwf")
+      var userId = req.user.twitter.id
        console.log(JSON.stringify(req.body));
        
-        // findByIdAndUpdate()
+        User.findById(userId, function(err, ui) {
+          if(err) console.log(err) 
+          console.log(ui, 'hi hi ui')
+        })
         // console.log("u have found a user")
       
         //  console.log("outside")
   })
-
-      // if(req.user){
-      //   console.log(req.user, "isbfibfipwf")
-      //   next();
-      //  } else {
-      //   redirect('/')
-      //  }
 
   app.get('/profile', function(req, res) {
     res.send("it's working")
