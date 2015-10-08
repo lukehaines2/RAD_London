@@ -13,12 +13,19 @@
 
   <header>
     <div class="logo">
-      <h1 id="logo">RAD.LONDON</h1>
+      <a href="/"><img id="logo" src="./images/image_facebook.jpg" alt="radimage"></a>
     </div>
     <div class="navigation-links">
       <ul id="nav-links">
-        <li class="home"><a href="/">Home</a></li>
-        <li class="places"><a href="/places">Places</a></li>
+        <% if(user) { %>
+          <div class="twitt-profile-image">
+            <img class="twitter-pic" src="<%= user.twitter.profileImage%>">
+          </div>
+        <% } %>
+        <li class="nav-links"><a href="/">Home</a></li>
+        <li class="nav-links"><a href="/places">Places</a></li>
+        <li class="nav-links"><a href="/auth/twitter">Login</a></li>
+        <li class="nav-links"><a href="/auth/twitter/logout">Logout</a></li>
       </ul>
     </div>
   </header>
