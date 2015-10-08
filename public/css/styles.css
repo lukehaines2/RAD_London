@@ -166,17 +166,18 @@ a, twitt-button {
 
 #info-box {
   width: 40%;
-  height: 91%;
-  border: 10px solid black;
+  height: 77.3%;
   z-index: 99;
   /*float: right;*/
+  border: 10px solid rgba(0,0,0,0.9);
   display: none;
   position: absolute;
   right: 0;
-  top: 6%;
-  background-color: black;
+  top: 12.3%;
+  background-color: rgba(0,0,0,0.9);
   color: white;
   overflow: auto;
+  padding-left: 7px;
 }
 
 li{
@@ -223,3 +224,7 @@ li{
 #twitter-hidden{
   display: none;
 }
+#image-tag{
+  width:100%;
+}
+

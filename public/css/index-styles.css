@@ -1,5 +1,5 @@
 html, body {
-  background-image: url("http://wanago.co.uk/images/uploads/locations/jacktheripper.jpg");
+  background-image: url("../images/Charlie-Goodman.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,7 +27,7 @@ html, body {
 
 .blurb {
   width: 750px;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
   margin: 0 auto;
   text-align: center;
@@ -133,4 +133,10 @@ p {
 a, twitt-button {
   text-decoration: none;
   color: white;
+}
+
+.blurb-container {
+  width: 65%;
+  margin: 0 auto;
+  background-color: rgba(68, 68, 68, 0.7);
 }
