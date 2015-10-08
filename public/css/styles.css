@@ -166,14 +166,14 @@ a, twitt-button {
 
 #info-box {
   width: 40%;
-  height: 76.8%;
+  height: 76.6%;
   z-index: 99;
   /*float: right;*/
   border: 10px solid rgba(0,0,0,0.1);
   display: none;
   position: absolute;
   right: 0;
-  top: 13.6%;
+  top: 17.3%;
   background-color: rgba(0,0,0,0.75);
   color: white;
   overflow: auto;
@@ -237,4 +237,9 @@ li{
   display: inline-block;
   margin:  0 auto;
   text-align: center;
+}
+
+.page-title {
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
 }
