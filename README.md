@@ -59,7 +59,7 @@ Retrieving and pushing data into our local database also proved difficult.
 * Once application has expanded to different areas of London show underneath titleon homepage, shows the popular destinations/walking tours.
 * Make links of these places clickable revealing different pages showing different maps with the current functionality.
 
-### The Team
+### Our Team
 https://github.com/lukehaines2
 <br>
 https://github.com/christine64
