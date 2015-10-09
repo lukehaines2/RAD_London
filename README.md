@@ -1,7 +1,8 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) RAD London - WDI Group Project
 
 ###Overview
-Interactive map of East London, marking the popular historical locations revealing the name, pictures and information. Signing in through Twitter will provide the user with the ability to "check into" the locations. 
+Interactive map of East London, marking the popular historical locations revealing the name, pictures and information. Signing in through Twitter will provide the user with the ability to "check into" the locations.
+<br>
 
 ![Frontpage](https://cloud.githubusercontent.com/assets/13486932/10378251/ca572906-6dff-11e5-9213-66902c9db244.png "Front Page")
 
