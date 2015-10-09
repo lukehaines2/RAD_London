@@ -18,11 +18,14 @@ Navigation bar shows:
 * User image from twitter
 * RAD London Logo
 
-![Place 1](https://cloud.githubusercontent.com/assets/13486932/10378628/d3fb31f8-6e01-11e5-9a2c-8ec1974cf124.png "Freedom Press: Place example")
+![Map](https://cloud.githubusercontent.com/assets/13486932/10389224/b995e644-6e67-11e5-9bc4-c15a9d6f3f8f.png "Map Page")
+
+
+![Place 1](https://cloud.githubusercontent.com/assets/13486932/10389282/0e6192d6-6e68-11e5-9253-e5ef97349458.png "Freedom Press: Place example")
 
 <br>
 
-![Place 2](https://cloud.githubusercontent.com/assets/13486932/10378716/52161940-6e02-11e5-9e6c-bf7cfc92e70f.png "Battle of Cable Street: Place example")
+![Place 2](https://cloud.githubusercontent.com/assets/13486932/10389290/22615244-6e68-11e5-8736-d636aaf493d5.png "Battle of Cable Street: Place example")
 
 Place button leads to a page showing the interactive map.
 Once on the map page users are able to click on the markers shown on the map revealing a box showing the information of the currently selected location. 
