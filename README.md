@@ -58,3 +58,11 @@ Retrieving and pushing data into our local database also proved difficult.
 * Add personal history/stories to the page, comment feature. 
 * Once application has expanded to different areas of London show underneath titleon homepage, shows the popular destinations/walking tours.
 * Make links of these places clickable revealing different pages showing different maps with the current functionality.
+
+### The Team
+https://github.com/lukehaines2
+https://github.com/christine64
+https://github.com/bam-sethi
+
+### Trello
+https://trello.com/b/tb3IAMtR/rad-london
