@@ -19,6 +19,8 @@ Navigation bar shows:
 * User's profile image from twitter (only when signed in)
 * RAD London Brand Logo
 
+<br>
+
 ![Map](https://cloud.githubusercontent.com/assets/13486932/10389224/b995e644-6e67-11e5-9bc4-c15a9d6f3f8f.png "Map Page")
 
 <br>
