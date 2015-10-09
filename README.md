@@ -8,19 +8,20 @@ Interactive map of East London, marking the popular historical locations reveali
 
 
 ###Approach/How it works
-User is presented with a landing page, giving them an understanding of the use of the web application. User has the ability to sign in via Twitter with the twitter sign in page, or via the login button in the navigaton bar. Once signed in, the user's twitter profile image will appear next to the home button on the navigation bar. 
+The user is presented with a landing page, giving them an understanding of the web application and how to use it. The user has the ability to sign in with Twitter via our Twitter sign in page, or the login button in the navigaton bar. Once signed in, the user's twitter profile image will appear next to the home button on the navigation bar. 
 
 Navigation bar shows:
 
-* Home button 
-* Place button 
-* Login (for Twitter) button
-* Logout (for twitter) button
-* User image from twitter
-* RAD London Logo
+* Home
+* Places
+* Login (for Twitter)
+* Logout (for twitter)
+* User's profile image from twitter (only when signed in)
+* RAD London Brand Logo
 
 ![Map](https://cloud.githubusercontent.com/assets/13486932/10389224/b995e644-6e67-11e5-9bc4-c15a9d6f3f8f.png "Map Page")
 
+<br>
 
 ![Place 1](https://cloud.githubusercontent.com/assets/13486932/10389282/0e6192d6-6e68-11e5-9253-e5ef97349458.png "Freedom Press: Place example")
 
