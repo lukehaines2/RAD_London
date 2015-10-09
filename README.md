@@ -61,7 +61,9 @@ Retrieving and pushing data into our local database also proved difficult.
 
 ### The Team
 https://github.com/lukehaines2
+<br>
 https://github.com/christine64
+<br>
 https://github.com/bam-sethi
 
 ### Trello
