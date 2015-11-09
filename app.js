@@ -35,7 +35,7 @@ app.use(morgan('dev'))
 // app.use(bodyParser.json());
 
 
-app.use(session({ secret: 'keyboard cat', key: 'sid', cookie: { secure: false }})); //session secret
+app.use(session({ secret: 'keyboard cat', key: 'sid', cookie: { secure: false }, resave: true, saveUninitialized: true })); //session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <title>RAD.LONDON</title>
   <link rel="stylesheet" href="/css/styles.css">
-  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,900italic,900,700italic,700,400italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Playfair+Display:400,900italic,900,700italic,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
       <ul id="nav-links">
         <% if(user) { %>
           <div class="twitt-profile-image">
-            <img class="twitter-pic" src="<%= user.twitter.profileImage%>">
+            <img class="twitter-pic" src="<%= user.twitter.profileImage %>">
           </div>
         <% } %>
         <li class="nav-links"><a href="/">Home</a></li>
@@ -75,7 +75,8 @@
   <% } %>
 </div>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
+
+  <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyAscx6n0HVemPA-ZSPmXGeIQ8LZywi08Os&callback=initMap"></script>
   <script src="/js/map.js"></script>
 </body>
 </html>

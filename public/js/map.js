@@ -34,8 +34,8 @@ function setMarkers(map) {
      // id: id,
      placeId: placeId
    });
-   marker.addListener('click', toggleBounce);
-   
+   // marker.addListener('click', toggleBounce);
+   markerClick();
  };
 };
 
@@ -63,8 +63,6 @@ function markerClick() {
        actualPlaceId = placeName[0].placeId;
 
        $('.actual-place-id').append(placeName[0].placeId);
-       //'.actual-place-id').append(placeName[0].placeId))
-       // debugger;
        closeBar();
      } else {
         $('.title').empty();
@@ -77,11 +75,10 @@ function markerClick() {
 
 function closeBar() {
  $('#close-bar').one('click', function() {
-     $('#info-box').animate({width: 'toggle'})
-      //omplete!")
-      $('.title').empty();
-      $('.place-information').empty();
-      $('#image-tag').empty();
+    $('#info-box').animate({width: 'toggle'});
+    $('.title').empty();
+    $('.place-information').empty();
+    $('#image-tag').empty();
  })
 
 };
@@ -98,13 +95,13 @@ function getIdOfPlace() {
 function likeClick() {
   $('#like').on('click', function(){
     getIdOfPlace();
-   d);
     $.ajax({
       method: 'PUT',
       url: '/places',
       data: {places: actualPlaceId}
-    }).done(function(){
-         })
+    }).done(function(response){
+        console.log(response);
+      });
     $('.title').append($('.twitter-pic')[0])
   })
 }
