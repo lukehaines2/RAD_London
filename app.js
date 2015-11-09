@@ -8,9 +8,10 @@ var passport      = require('passport');
 var session       = require('express-session')
 var cookieParser  = require('cookie-parser')
 var flash         = require('connect-flash')
+var mongoURI      = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/rad-london';
 
 
-mongoose.connect('mongodb://localhost:27017/rad-london')
+mongoose.connect(mongoURI);
 
 
 // var routes = require('./config/routes');
